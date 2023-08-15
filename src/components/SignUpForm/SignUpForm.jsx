@@ -13,7 +13,6 @@ export default function SignUpForm({handleSignUp}){
         evt.preventDefault();
         handleSignUp(formData.name);
     }
-
     
     return(
         <form onSubmit={handleSubmit}>

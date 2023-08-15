@@ -7,12 +7,15 @@ import MovieDetailPage from '../MovieDetailPage/MovieDetailPage'
 import MoviesListPage from '../MoviesListPage/MoviesListPage'
 
 import NavBar from '../../components/Navbar/NavBar'
+import MovieCard from '../../components/MovieCard/MovieCard'
+
+import { movies } from "../../data"
 
 import './App.css'
 
 export default function App() {
   const [user, setUser] = useState(null)
-
+  
   function handleSignUp(name){
     setUser(name);
   }
@@ -23,8 +26,8 @@ export default function App() {
       <>
         <NavBar  user={user}/>
         <Routes>
-          <Route path="/" element={<MoviesListPage />} />
-          <Route path="/movies/:movieName" element={<MovieDetailPage />} />
+          <Route path="/" element={<MoviesListPage movies={movies} />} />
+          <Route path="/movies/:movieName" element={<MovieDetailPage movies={movies} />} />
           <Route path="/actors" element={<ActorsListPage />} />
         </Routes>
       </>
