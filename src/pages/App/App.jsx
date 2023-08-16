@@ -7,7 +7,6 @@ import MovieDetailPage from '../MovieDetailPage/MovieDetailPage'
 import MoviesListPage from '../MoviesListPage/MoviesListPage'
 
 import NavBar from '../../components/Navbar/NavBar'
-import MovieCard from '../../components/MovieCard/MovieCard'
 
 import { movies } from "../../data"
 
@@ -28,7 +27,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MoviesListPage movies={movies} />} />
           <Route path="/movies/:movieName" element={<MovieDetailPage movies={movies} />} />
-          <Route path="/actors" element={<ActorsListPage />} />
+          <Route path="/actors" element={<ActorsListPage movies={movies}/>} />
         </Routes>
       </>
       :
